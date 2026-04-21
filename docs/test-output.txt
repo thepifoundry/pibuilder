@@ -1,0 +1,46 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.3, pluggy-1.6.0 -- /mnt/d/pf/pibuilder/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /mnt/d/pf/pibuilder
+configfile: pyproject.toml
+plugins: cov-7.1.0
+collecting ... collected 13 items
+
+tests/test_rainfall_gumbel.py::TestGumbelMPSB::test_gumbel_first_grid_point PASSED [  7%]
+tests/test_rainfall_gumbel.py::TestGumbelMPSB::test_gumbel_all_grid_points PASSED [ 15%]
+tests/test_rainfall_gumbel.py::TestGumbelIndargarh::test_100yr_1h_intensity PASSED [ 23%]
+tests/test_rainfall_gumbel.py::TestGumbelIndargarh::test_full_intensity_table PASSED [ 30%]
+tests/test_rainfall_gumbel.py::TestGumbelIndargarh::test_duration_scaling_formula PASSED [ 38%]
+tests/test_rainfall_gumbel.py::TestGumbelIndargarh::test_indargarh_data_length PASSED [ 46%]
+tests/test_rainfall_lp3.py::TestLP3Core::test_unbiased_skewness_matches_excel PASSED [ 53%]
+tests/test_rainfall_lp3.py::TestLP3Core::test_wilson_hilferty_matches_excel_kt PASSED [ 61%]
+tests/test_rainfall_lp3.py::TestLP3GridPoints::test_lp3_first_grid_point PASSED [ 69%]
+tests/test_rainfall_lp3.py::TestLP3GridPoints::test_lp3_all_grid_points PASSED [ 76%]
+tests/test_rainfall_selection.py::TestSelectionLogic::test_first_point_selects_lp3 PASSED [ 84%]
+tests/test_rainfall_selection.py::TestSelectionLogic::test_lognormal_wins_when_higher PASSED [ 92%]
+tests/test_rainfall_selection.py::TestSelectionLogic::test_all_grid_points_selected_rp PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_rainfall_selection.py::TestSelectionLogic::test_all_grid_points_selected_rp
+  /mnt/d/pf/pibuilder/tests/test_rainfall_selection.py:91: UserWarning: 17 known Excel chi-sq bug discrepancies (expected, see KNOWN_EXCEL_CHISQ_BUG_POINTS):
+  (29.125,88.625): got 222.693 [Distribution.PEARSON], expected 221.932 [LP3], diff=0.761
+  (29.125,90.625): got 257.288 [Distribution.PEARSON], expected 245.304 [Log Normal], diff=11.984
+  (29.125,91.625): got 223.956 [Distribution.PEARSON], expected 200.449 [LP3], diff=23.506
+  (29.125,92.375): got 203.553 [Distribution.PEARSON], expected 203.029 [LP3], diff=0.524
+  (29.375,83.875): got 241.876 [Distribution.PEARSON], expected 237.255 [Log Normal], diff=4.622
+  (29.375,85.625): got 206.261 [Distribution.PEARSON], expected 238.877 [LP3], diff=32.617
+  (29.375,91.625): got 227.209 [Distribution.GUMBEL], expected 225.408 [LP3], diff=1.801
+  (29.375,91.875): got 231.466 [Distribution.PEARSON], expected 227.228 [LP3], diff=4.238
+  (29.375,94.375): got 174.529 [Distribution.NORMAL], expected 197.466 [Gumbel], diff=22.938
+  (29.875,83.625): got 306.811 [Distribution.PEARSON], expected 295.942 [LP3], diff=10.869
+  (29.875,95.125): got 402.026 [Distribution.PEARSON], expected 397.764 [LP3], diff=4.262
+  (30.125,85.125): got 235.071 [Distribution.PEARSON], expected 270.906 [LP3], diff=35.835
+  (30.125,94.625): got 161.185 [Distribution.PEARSON], expected 159.561 [Gumbel], diff=1.625
+  (30.375,82.625): got 285.316 [Distribution.PEARSON], expected 295.106 [LP3], diff=9.791
+  (30.375,91.375): got 242.574 [Distribution.LP3], expected 267.473 [Log Normal], diff=24.899
+  (30.375,95.625): got 198.840 [Distribution.PEARSON], expected 196.693 [LP3], diff=2.147
+  (30.625,82.625): got 291.172 [Distribution.PEARSON], expected 285.706 [LP3], diff=5.466
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 1 warning in 5.02s =========================
